@@ -10,12 +10,17 @@ const bodyParser = require('body-parser');
 require('./db');
 
 // create an express instance 
+app = express();
 
 // hook any middleware you need to into the express instance, including your route handlers
 // hint: use the bodyParser middleware to parse the request body for POST & PUT requests.
 
 // serve the `../public/` folder using the express.static() middleware function
 // (you will want to use the path library to correctly resolve the path to ../public.)
+app.use(express.static(path.join(__dirname, '../public')));
 
 // listen on this port:
 const port = 5050;
+app.listen(port, () => {
+    console.log('Tagger is listening on 5050');
+});

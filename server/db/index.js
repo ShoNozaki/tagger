@@ -12,7 +12,7 @@ var knex = require('knex')({
 var db = require('bookshelf')(knex);
 
 db.knex.schema.hasTable('notes').then((exists) => {
-  if (!exits) {
+  if (!exists) {
 		db.knex.schema.createTable('notes', (note) => {
 			note.increments('id').primary();
 			note.string('message', 255);
