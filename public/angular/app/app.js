@@ -27,6 +27,8 @@ angular.module('tagger')
 
   service.getNotes(this.makeNotes);
 
+  this.createMessage = service.postNotes(this);
+
  })
  .directive('app', function() {
    return {

@@ -29,7 +29,7 @@ const Notes = sequelize.define('note', {
     },
 }) 
 
-Notes.sync();
+Notes.sync({force:true});
 
 //refactor for login
 

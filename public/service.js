@@ -13,5 +13,18 @@ angular.module('tagger')
     .catch(function errorCallback(response) {
       console.log('error = ', response)
     })
+  },
+  this.postNotes = function(message) {
+    $http({
+      method:'POST',
+      url: 'http://localhost:5050/messages'
+    })
+    .then(function successCallback(data) {
+      console.log(data);
+      console.log('Success');
+    })
+    .catch(function errorCallback(response) {
+      console.log('error = ', response)
+    })
   }
 })
